@@ -7,4 +7,14 @@ library("tidyverse")
 
 # Reading Data
 
-excel_sheets()
+## Path to Data
+
+path <- file.path("Bitcoin", "Source Data", fsep = "/")
+setwd(path)
+
+## Loading Data
+
+blocks <- read_csv("bitcoin_blocks-bytetree_api-07.25.21.csv")
+daily <- read_csv("bitcoin_daily-bytetree_api-07.25.21.csv")
+
+
