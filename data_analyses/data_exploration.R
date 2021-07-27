@@ -9,7 +9,7 @@ library("tidyverse")
 
 ## Path to Data
 
-path <- file.path("Bitcoin", "Source Data", fsep = "/")
+path <- file.path("bitcoin", "source_data", fsep = "/")
 setwd(path)
 
 ## Loading Data
