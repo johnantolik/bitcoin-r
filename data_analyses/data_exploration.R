@@ -9,7 +9,7 @@ library("tidyverse")
 
 ## Path to Data
 
-path <- file.path("bitcoin", "source_data", fsep = "/")
+path <- file.path("bitcoin_data", "source_data", fsep = "/")
 setwd(path)
 
 ## Loading Data
@@ -17,4 +17,4 @@ setwd(path)
 blocks <- read_csv("bitcoin_blocks-bytetree_api-07.25.21.csv")
 daily <- read_csv("bitcoin_daily-bytetree_api-07.25.21.csv")
 
-test
+summary(blocks)
