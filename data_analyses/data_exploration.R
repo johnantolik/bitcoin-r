@@ -40,6 +40,9 @@ data_daily
 # Examine weekday bias (VS weekend) in blocks db
 
 blocks %>%
-  group_by(date) %>%
+  select(date, txv) %>% 
+  mutate(day_of_week = weekdays(date)) %>% 
+  group_by(day_of_week) %>%
+  mutate(sum_txv = sum(txv))
   
   
