@@ -39,10 +39,14 @@ data_daily
 
 # Examine weekday bias (VS weekend) in blocks db
 
+## date range of blocks dataframe is for only a part of 2021, and no other years.
+
 blocks %>%
   select(date, txv) %>% 
-  mutate(day_of_week = weekdays(date)) %>% 
-  group_by(day_of_week) %>%
-  mutate(sum_txv = sum(txv))
+  mutate(year = as.numeric(format(date, "%Y")), day_of_week = weekdays(date)) %>% 
+  group_by(year, day_of_week) %>%
+  mutate(sum_txv = sum(txv)) 
+
+## Above result suggests only Sunday has significantly lower total transaction value (txv)
   
   
